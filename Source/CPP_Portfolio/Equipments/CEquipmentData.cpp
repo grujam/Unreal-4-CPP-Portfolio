@@ -1,0 +1,2 @@
+#include "Equipments/CEquipmentData.h"
+
