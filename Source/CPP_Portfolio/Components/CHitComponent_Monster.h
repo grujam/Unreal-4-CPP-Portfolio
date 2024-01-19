@@ -18,6 +18,9 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Hit Montages")
 		TMap<TEnumAsByte<EPhysicalSurface>, UAnimMontage*> Montages;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Hit Montages")
+		UAnimMontage* DeadMontage;
+
 	UPROPERTY(VisibleAnywhere, Category = "Damage Visibility")
 		TSubclassOf<class UUserWidget> DamageWidget;
 

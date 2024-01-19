@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "Character/Player/CAnimInstance.h"
 #include "Components/CEquipmentComponent.h"
+#include "Components/CIKComponent_Human.h"
 #include "CAnimInstance_Player.generated.h"
 
 UCLASS()
@@ -22,6 +23,11 @@ private:
 	UFUNCTION()
 		void OnEquipmentTypeChanged(EEquipmentType InPrevType, EEquipmentType InNewType);
 
+protected:
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "IK")
+		FIKFeetData FeetData;
+
 private:
 	class UCEquipmentComponent* EquipmentComponent;
+	class UCIKComponent_Human* IKComponent;
 };

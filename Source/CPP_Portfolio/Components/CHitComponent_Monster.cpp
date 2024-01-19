@@ -62,8 +62,6 @@ void UCHitComponent_Monster::Hit(ACharacter* InAttacker, const FHitData& InHitDa
 					behavior->SetHitMode();
 				}
 
-				
-
 				OwnerCharacter->PlayAnimMontage(Montages[InBodyPart]);
 			}
 		}
@@ -83,6 +81,9 @@ void UCHitComponent_Monster::Dead()
 {
 	UCMonsterStateComponent* state = Cast<UCMonsterStateComponent>(OwnerCharacter->GetComponentByClass(UCMonsterStateComponent::StaticClass()));
 	UCMonsterBehaviorComponent* behavior = Cast<UCMonsterBehaviorComponent>(OwnerCharacter->GetComponentByClass(UCMonsterBehaviorComponent::StaticClass()));
+
+	if (DeadMontage != nullptr)
+		OwnerCharacter->PlayAnimMontage(DeadMontage);
 
 	state->SetDeadState();
 	behavior->SetDeadMode();

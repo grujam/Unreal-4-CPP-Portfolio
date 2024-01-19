@@ -14,6 +14,14 @@
 				"AIModule",
 				"UMG"
 			]
+		},
+		{
+			"Name": "LoadingScreen",
+			"Type": "Runtime",
+			"LoadingPhase": "PreLoadingScreen",
+			"AdditionalDependencies": [
+				"Engine"
+			]
 		}
 	],
 	"Plugins": [

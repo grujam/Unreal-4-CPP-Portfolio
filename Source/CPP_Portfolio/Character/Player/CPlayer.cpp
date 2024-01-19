@@ -8,6 +8,7 @@
 #include "Components/CHitComponent_Player.h"
 #include "Components/CResourceComponent.h"
 #include "Components/CScreenComponent.h"
+#include "Components/CIKComponent_Human.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Camera/CameraComponent.h"
@@ -16,7 +17,7 @@
 ACPlayer::ACPlayer()
 {
 	PrimaryActorTick.bCanEverTick = true;
-
+	
 	//Camera
 	{
 		SpringArm = this->CreateDefaultSubobject<USpringArmComponent>("Spring Arm");
@@ -50,6 +51,7 @@ ACPlayer::ACPlayer()
 
 		ScreenComponent = this->CreateDefaultSubobject<UCScreenComponent>("Screen Component");
 
+		IKComponent = this->CreateDefaultSubobject<UCIKComponent_Human>("IK Component");
 	}
 
 	//Skeletal Mesh
@@ -145,4 +147,5 @@ void ACPlayer::Tick(float DeltaSeconds)
 void ACPlayer::TakeDamage(const FPlayerHitData& InHitData, const FVector InAttackerLocation)
 {
 	HitComponent->Hit(InHitData, InAttackerLocation);
+	
 }

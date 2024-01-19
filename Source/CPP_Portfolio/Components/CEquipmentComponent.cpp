@@ -124,6 +124,9 @@ void UCEquipmentComponent::WaitAction()
 
 void UCEquipmentComponent::DoAction()
 {
+	if (IsUnarmedMode())
+		return;
+
 	if (bKeyLeft && bKeyRight)
 		DoActionDouble();
 	else if (bKeyLeft && bKeyExtra)

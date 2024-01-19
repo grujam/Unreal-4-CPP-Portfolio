@@ -9,7 +9,7 @@ public class CPP_Portfolio : ModuleRules
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
         PublicIncludePaths.Add(ModuleDirectory);
-
+        
         PublicDependencyModuleNames.Add("Core");
 		PublicDependencyModuleNames.Add("CoreUObject");
 		PublicDependencyModuleNames.Add("Engine");
@@ -20,5 +20,7 @@ public class CPP_Portfolio : ModuleRules
 		PublicDependencyModuleNames.Add("GameplayTasks");
 		PublicDependencyModuleNames.Add("NavigationSystem");
 		PublicDependencyModuleNames.Add("UMG");
+
+		PrivateDependencyModuleNames.Add("LoadingScreen");
     }
 }

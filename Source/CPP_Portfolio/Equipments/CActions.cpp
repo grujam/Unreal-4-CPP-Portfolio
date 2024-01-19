@@ -131,7 +131,7 @@ void UCActions::OnEquipmentBeginOverlap(UPrimitiveComponent* InOtherComp, int32 
 			{
 				FString str = CBodyMap::Map[physmat->GetName()];
 				int32 index = enumProperty->GetIndexByNameString(str);
-				GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Blue, physmat->GetName());
+				//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Blue, physmat->GetName());
 				EPhysicalSurface type = EPhysicalSurface((uint8)index);
 
 				character->TakeDamage(OwnerCharacter, HitData, type, SweepResult);

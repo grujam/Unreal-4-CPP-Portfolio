@@ -36,6 +36,9 @@ public:
 		class UCScreenComponent* ScreenComponent;
 
 	UPROPERTY(VisibleAnywhere)
+		class UCIKComponent_Human* IKComponent;
+
+	UPROPERTY(VisibleAnywhere)
 		TSubclassOf<class UUserWidget> WidgetClass;
 
 private:
